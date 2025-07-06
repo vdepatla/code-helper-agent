@@ -2,7 +2,8 @@ from code_helper_agent import code_helper
 import gradio as gr
 
 def run_agent(input_text):
-    return code_helper.invoke({"code": input_text})
+    response = code_helper.invoke({"code": input_text})
+    return response.get("documentation", "")
 
 demo = gr.Interface(fn=run_agent, inputs=gr.Textbox(label="Input", placeholder="Type your input here..."),
                      outputs=gr.Textbox(label="Output", placeholder="Your output will appear here..."),
