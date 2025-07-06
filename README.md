@@ -57,10 +57,6 @@ print(result["documentation"])
 - `.env` — Environment variables (not tracked by git).
 - `agent_env/` — Virtual environment directory (not tracked by git).
 
-## License
-
-MIT License
-
 ## Notes
 
 - Make sure your `.env` and `agent_env/` directories are listed in `.gitignore` to avoid committing sensitive data or virtual environment files.
