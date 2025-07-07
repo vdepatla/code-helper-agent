@@ -7,6 +7,7 @@ This project is an AI-powered code analysis and documentation tool built with [L
 - **Language Detection:** Identifies the programming language of a code snippet.
 - **Functionality Analysis:** Summarizes what the code does and its main purpose.
 - **Automated Documentation:** Generates documentation including a description, function details, and suggestions for improvement.
+- **Gradio UI:** Provides a simple web interface for interactive code analysis.
 
 ## How It Works
 
@@ -41,6 +42,8 @@ The agent uses a workflow graph with three main steps:
 
 ## Usage
 
+### Python API
+
 Import and use the `code_helper` workflow in your Python code. Provide a `State` dictionary with at least the `code` key:
 
 ```python
@@ -51,12 +54,47 @@ result = code_helper.invoke(state)
 print(result["documentation"])
 ```
 
+### Gradio UI
+
+A Gradio web interface is available for interactive use.
+
+#### To run the Gradio server locally:
+
+1. Make sure Gradio is installed (it should be in `requirements.txt`). If not, install it:
+   ```sh
+   pip install gradio
+   ```
+
+2. Run the Gradio app (replace `gradio_app.py` with your actual Gradio UI file if different):
+   ```sh
+   python gradio_app.py
+   ```
+
+3. Open the provided local URL in your browser (usually `http://127.0.0.1:7860/`).
+
+#### Example Gradio UI usage
+
+- Paste your code snippet into the input box.
+- Click the "Analyze" button.
+- View the detected language, functionality summary, and generated documentation in the output area.
+
 ## File Structure
 
 - `code_helper_agent.py` — Main workflow and logic.
+- `gradio_app.py` — Gradio UI for interactive code analysis.
 - `.env` — Environment variables (not tracked by git).
 - `agent_env/` — Virtual environment directory (not tracked by git).
 
+## .gitignore
+
+Make sure your `.env` and `agent_env/` directories are listed in `.gitignore` to avoid committing sensitive data or virtual environment files:
+
+```
+agent_env/
+.env
+```
+
 ## Notes
 
-- Make sure your `.env` and `agent_env/` directories are listed in `.gitignore` to avoid committing sensitive data or virtual environment files.
+- Do not commit your `.env` file or virtual environment directory.
+- The Gradio UI makes it easy to use the agent without writing code.
