@@ -2,7 +2,7 @@
 
 This project is an AI-powered code analysis and documentation tool built with [LangChain](https://python.langchain.com/), [LangGraph](https://github.com/langchain-ai/langgraph), and [OpenAI GPT-4](https://platform.openai.com/docs/models/gpt-4). It automates the process of understanding code, detecting its programming language, analyzing its functionality, and generating documentation.
 
-![Code Helper Agent Screenshot](../assets/code_helper_agent_screenshot.png)
+![Code Helper Agent Screenshot](./assets/code_helper_agent.png)
 
 ## Features
 
